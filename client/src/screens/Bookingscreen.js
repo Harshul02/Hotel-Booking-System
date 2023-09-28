@@ -6,12 +6,14 @@ import moment from "moment";
 import StripeCheckout from "react-stripe-checkout";
 import Swal from "sweetalert2";
 import { useParams } from 'react-router-dom';
-import PublisherKey from './PublisherKey';
+// import PublisherKey from './PublisherKey';
 
 function Bookingscreen({ match }) {
   const [loading, setloading] = useState(true);
   const [error, seterror] = useState();
   const [room, setroom] = useState();
+  const PublisherKey = process.env.REACT_APP_PUBLISHER_KEY;
+  console.log(PublisherKey);
   // let { roomid,fromdate,todate } = useParams();
 
   // console.log(fromdate);
