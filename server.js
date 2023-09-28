@@ -1,5 +1,5 @@
 const express = require('express');
-
+var cors = require('cors')
 const app = express();
 const db = require('./db');
 const roomsRoute = require('./routers/roomsRoute');
