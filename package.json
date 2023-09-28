@@ -25,5 +25,8 @@
     "stripe": "^12.8.0",
     "uuid": "^9.0.0"
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "http://localhost:5000/",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
