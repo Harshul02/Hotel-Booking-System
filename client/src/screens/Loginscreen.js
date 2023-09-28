@@ -21,7 +21,7 @@ function Loginscreen() {
     try {
       setloading(true);
       // const result = await axios.post("/api/users/login", user).data;
-      const response = await axios.post("/api/users/login", user);
+      const response = await axios.post(`${process.env.REACT_APP_URL}/api/users/login`, user);
       const result = response.data;
       console.log(result);
       setloading(false);

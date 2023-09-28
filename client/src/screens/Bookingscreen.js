@@ -13,7 +13,6 @@ function Bookingscreen({ match }) {
   const [error, seterror] = useState();
   const [room, setroom] = useState();
   const PublisherKey = process.env.REACT_APP_PUBLISHER_KEY;
-  console.log(PublisherKey);
   // let { roomid,fromdate,todate } = useParams();
 
   // console.log(fromdate);
@@ -46,7 +45,7 @@ todate = todate.format('DD-MM-YYYY');
     try {
       setloading(true);
       const response = (
-        await axios.post("/api/rooms/getroombyid", {
+        await axios.post(`${process.env.REACT_APP_URL}/api/rooms/getroombyid`, {
           roomid: roomid,
         })
       );
@@ -79,7 +78,7 @@ todate = todate.format('DD-MM-YYYY');
 
     try {
       setloading(true);
-      const result = await axios.post("/api/bookings/bookroom", bookingDetails);
+      const result = await axios.post(`${process.env.REACT_APP_URL}/api/bookings/bookroom`, bookingDetails);
       console.log(result);
       setloading(false);
       Swal.fire(

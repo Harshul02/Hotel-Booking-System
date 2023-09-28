@@ -32,7 +32,7 @@ function Registerscreen() {
 
       try {
         setloading(true);
-        const result = await axios.post("/api/users/register", user).data;
+        const result = await axios.post(`${process.env.REACT_APP_URL}/api/users/register`, user).data;
         setloading(false);
         setsuccess(true);
         setname("");

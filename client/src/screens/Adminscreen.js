@@ -51,7 +51,7 @@ export function Bookings() {
   useEffect(() => {
     async function fetchData(){
     try {
-      const response = await axios.get("/api/bookings/getallbookings");
+      const response = await axios.get(`${process.env.REACT_APP_URL}/api/bookings/getallbookings`);
       const data = response.data;
       console.log(data);
       setbookings(data);
@@ -112,7 +112,7 @@ export function Rooms() {
   useEffect(() => {
     async function fetchData(){
     try {
-      const data = await (await axios.get("/api/rooms/getallrooms")).data;
+      const data = await (await axios.get(`${process.env.REACT_APP_URL}/api/rooms/getallrooms`)).data;
       setrooms(data);
       setloading(false);
     } catch (error) {
@@ -171,7 +171,7 @@ export function Users() {
   useEffect(() => {
     async function fetchData() {
     try {
-      const data = await (await axios.get("/api/users/getallusers")).data;
+      const data = await (await axios.get(`${process.env.REACT_APP_URL}/api/users/getallusers`)).data;
       setusers(data);
       setloading(false);
     } catch (error) {
@@ -245,7 +245,7 @@ export function AddRoom() {
     try {
       setloading(true);
       const result = await (
-        await axios.post("/api/rooms/addroom", newroom)
+        await axios.post(`${process.env.REACT_APP_URL}/api/rooms/addroom`, newroom)
       ).data;
       console.log(result);
       setloading(false);
